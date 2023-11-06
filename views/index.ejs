@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>List of Numbers</title>
+</head>
+<body>
+  <h1>Enter a list of numbers (comma-separated)</h1>
+  <form action="/process" method="post">
+    <input type="text" name="numbers" value="<%= numbers.join(',') %>" placeholder="e.g., 1,2,3,4,5" required>
+    <button type="submit">Submit</button>
+  </form>
+  <% if (numbers.length > 0) { %>
+    <h2>Entered Numbers:</h2>
+    <ul>
+      <% for (let number of numbers) { %>
+        <li><%= number %></li>
+      <% } %>
+    </ul>
+  <% } %>
+</body>
+</html>
